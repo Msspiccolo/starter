@@ -63,6 +63,7 @@
                 <display:column property="nome" titleKey="label.contato.nome" escapeXml="true"/>
 
                 <display:column property="telefone" titleKey="label.contato.telefone" escapeXml="true"/>
+                <display:column property="estadoCivil" titleKey="label.contato.estadoCivil" escapeXml="true"/>
 
             </display:table>
 
