@@ -6,6 +6,7 @@
 		<id property="idContato" column="id_contato" />
 		<result property="nome" column="nome" />
         <result property="telefone" column="telefone" />
+        <result property="estadoCivil" column="estado_civil" />
 	</resultMap>
 
     <select id="listaPorExemplo" resultMap="contatoResult">
@@ -17,6 +18,9 @@
             <if test="telefone != null">
                 AND telefone = #{telefone}
             </if>
+            <if test="estadoCivil != null">
+                AND estado_civil = #{estadoCivil}
+            </if>
         </where>
         ORDER BY nome
     </select>
@@ -26,15 +30,16 @@
 	</select>
 
     <insert id="insere">
-        INSERT INTO contato(nome, telefone)
-        VALUES (#{nome}, #{telefone})
+        INSERT INTO contato(nome, telefone, estado_civil)
+        VALUES (#{nome}, #{telefone}, #{estadoCivil})
     </insert>
 
     <update id="atualiza">
         UPDATE contato
         SET
             nome = #{nome},
-            telefone = #{telefone}
+            telefone = #{telefone},
+            estado_civil = #{estadoCivil}
         WHERE id_contato = #{idContato}
     </update>
 

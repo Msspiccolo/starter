@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.val;
 import net.sourceforge.stripes.action.*;
 import net.sourceforge.stripes.integration.spring.SpringBean;
+import net.sourceforge.stripes.validation.DateTypeConverter;
 import net.sourceforge.stripes.validation.Validate;
 import net.sourceforge.stripes.validation.ValidateNestedProperties;
 import training.actionbeans.BaseActionBean;
@@ -32,7 +33,7 @@ public class PetActionBean extends BaseActionBean {
     @ValidateNestedProperties({
         @Validate(field = "nomePet", required = true, on = "salvar", maxlength = 100),
         @Validate(field = "racaPet", required = true, on = "salvar", maxlength = 30),
-        @Validate(field = "dataNascimento", required = true, on = "salvar")
+        @Validate(field = "dataNascimento", required = true, on = "salvar", converter = DateTypeConverter.class)
 
     })
     Pet pet; // vai receber dados dos form

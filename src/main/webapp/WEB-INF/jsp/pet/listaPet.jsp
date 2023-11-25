@@ -24,9 +24,9 @@
 
 
         <div class="form-group mb-4">
-            <s:label for="pet.dataNascimento" />
+            <s:label for="label.pet.dataNascimento" />
             <input type="date" name="pet.dataNascimento" value="<fmt:formatDate value='${pet.dataNascimento}' pattern='yyyy-MM-dd'/>" class="form-control"/>
-            <s:errors field="pet.dataNascimento" />
+            <s:errors field="label.pet.dataNascimento" />
         </div>
 
         <div class="form-group mx-sm-3 mb-2">
