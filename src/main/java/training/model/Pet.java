@@ -3,7 +3,7 @@ package training.model;
 import lombok.Data;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @ToString
@@ -12,5 +12,5 @@ public class Pet {
     private Integer idPet;
     private String nomePet;
     private String racaPet;
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
 }
