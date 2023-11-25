@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="training.mapper.PetMapper">
+
+    <resultMap id="petResult" type="training.model.Pet">
+        <id property="idPet" column="id_pet" />
+        <result property="nomePet" column="nome" />
+        <result property="racaPet" column="raca" />
+        <result property="dataNascimento" column="dataNascimento" />
+    </resultMap>
+
+    <select id="listaPorExemplo" resultMap="petResult">
+        SELECT * FROM pet
+        <where>
+            <if test="nomePet != null">
+                AND nome LIKE CONCAT('%', #{nomePet}, '%')
+            </if>
+            <if test="racaPet != null">
+                AND raca = #{racaPet}
+            </if>
+        </where>
+        ORDER BY nome
+    </select>
+
+    <select id="buscaPorId" resultMap="petResult">
+        SELECT * FROM pet WHERE id_pet = #{idPet}
+    </select>
+
+    <insert id="insere">
+        INSERT INTO pet(nome, raca, dataNascimento)
+        VALUES (#{nomePet}, #{racaPet}, #{dataNascimento})
+    </insert>
+
+    <update id="atualiza">
+        UPDATE pet
+        SET
+            nome = #{nomePet},
+            raca = #{racaPet},
+            dataNascimento = #{dataNascimento}
+        WHERE id_pet = #{idPet}
+    </update>
+
+    <delete id="remove">
+        DELETE FROM pet WHERE id_pet = #{idPet}
+    </delete>
+
+</mapper>
