@@ -65,6 +65,10 @@
 
                 <display:column property="dataNascimento" titleKey="label.pet.dataNascimento" escapeXml="true"/>
 
+                <display:column property="genero" titleKey="label.pet.genero" escapeXml="true"/>
+
+
+
             </display:table>
 
         </div>

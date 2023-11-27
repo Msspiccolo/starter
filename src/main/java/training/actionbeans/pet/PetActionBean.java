@@ -21,6 +21,9 @@ public class PetActionBean extends BaseActionBean {
     @Getter
     final List<String> raca = inicializaRacas(); // Sera acessado pelo formPet.jsp
 
+    @Getter
+    final List<String> generos = inicializaGenero();
+
 
     @Getter
     List<Pet> pets; // Será acessado pelo listaPet.jsp
@@ -104,6 +107,10 @@ public class PetActionBean extends BaseActionBean {
         racas.add("Outras");
 
         return racas;
+    }
+
+    private List<String> inicializaGenero() {
+        return List.of("Macho", "Femêa");
     }
 
 }

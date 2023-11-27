@@ -7,6 +7,7 @@
         <result property="nomePet" column="nome" />
         <result property="racaPet" column="raca" />
         <result property="dataNascimento" column="dataNascimento" />
+        <result property="genero" column="genero" />
     </resultMap>
 
     <select id="listaPorExemplo" resultMap="petResult">
@@ -27,8 +28,8 @@
     </select>
 
     <insert id="insere">
-        INSERT INTO pet(nome, raca, dataNascimento)
-        VALUES (#{nomePet}, #{racaPet}, #{dataNascimento})
+        INSERT INTO pet(nome, raca, dataNascimento,genero)
+        VALUES (#{nomePet}, #{racaPet}, #{dataNascimento}, #{genero})
     </insert>
 
     <update id="atualiza">
@@ -36,7 +37,8 @@
         SET
             nome = #{nomePet},
             raca = #{racaPet},
-            dataNascimento = #{dataNascimento}
+            dataNascimento = #{dataNascimento},
+            genero = #{genero}
         WHERE id_pet = #{idPet}
     </update>
 

@@ -43,6 +43,15 @@
                 </div>
 
                 <div class="form-group mb-4">
+                    <c:forEach var="genero" items="${actionBean.generos}">
+                        <s:radio name="pet.genero" value="${genero}"/>
+                        <fmt:message key="${genero}"/>
+                    </c:forEach>
+                </div>
+
+
+
+                <div class="form-group mb-4">
                     <s:label for="pet.racaPet" />
                     <s:select name="pet.racaPet" class="form-control" >
                         <s:option value="">Escolha...</s:option>
