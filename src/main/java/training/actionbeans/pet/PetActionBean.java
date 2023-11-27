@@ -110,7 +110,7 @@ public class PetActionBean extends BaseActionBean {
     }
 
     private List<String> inicializaGenero() {
-        return List.of("Macho", "Femêa");
+        return List.of("Macho", "Femea");
     }
 
 }
